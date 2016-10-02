@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+    <title>Home Page</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <ul id="dropdown-admin" class="dropdown-content">
+      <li><a href="config.html">Configurações Gerais</a></li>
+      <li class="divider"></li>
+      <li><a href="calibracao_config">Calibração do Sensor</a></li>
+    </ul>
+
+    <ul id="dropdown-manuais" class="dropdown-content">
+      <li><a href="#">Guia Completo</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Limpeza do veículo</a></li>
+      <li><a href="#"></a></li>
+    </ul>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown-admin">Administração<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="pagina_medicoes.html">Minhas Medições</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown-manuais">Manuais<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- 
+      ============= DIFF =========
+      * Este é o conteúdo que caracteriza a página de configurações do host
+      a ser conectado. Gostaria que fosse tudo com AJAX.
+
+     -->
+    <div class="content meansurements">
+    <h4>
+      <i class="material-icons prefix">assessment</i>
+      <span>Medições</span>
+    </h4>
+
+    <div class="row meansurements">
+      <div class="row table-header">
+          <p class="row description">
+            Lista de medições efetuadas.
+          <p>
+          <button class="btn waves-effect waves-light" type="button" name="action">Baixar dados
+            <i class="material-icons right">system_update_alt</i>
+          </button>
+      </div>
+      <div class="row table-body"> 
+        <div class="list-item">
+          <span class="rank">1</span>
+          <span class="date">9/07/2016 14:14</span>
+          <div class="item-options">
+            <i class="material-icons prefix">insert_chart</i>
+            <i class="material-icons prefix">open_in_browser</i>
+            <i class="material-icons prefix">delete</i>
+          </div>
+        </div>
+
+        <div class="list-item">
+          <span class="rank">2</span>
+          <span class="date">9/07/2016 14:14</span>
+          <div class="item-options">
+            <i class="material-icons prefix">insert_chart</i>
+            <i class="material-icons prefix">open_in_browser</i>
+            <i class="material-icons prefix">delete</i>
+          </div>
+        </div>
+
+        <div class="list-item">
+          <span class="rank">3</span>
+          <span class="date">9/07/2016 14:14</span>
+          <div class="item-options">
+            <i class="material-icons prefix">insert_chart</i>
+            <i class="material-icons prefix">open_in_browser</i>
+            <i class="material-icons prefix">delete</i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============= DIFF ======================= --> 
+  <body>
+</html>
+          

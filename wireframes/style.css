@@ -1,0 +1,80 @@
+/*GENERAL STYLE =======================================*/
+
+.content {
+  padding: 5px 50px 50px 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+h4 {
+  border-bottom: 2px solid green;
+  padding-bottom: 5px;
+}
+
+.nav-wrapper {
+  padding: 0px 20px 0px 20px;
+
+}
+
+/*INDEX STYLE =========================================*/
+
+
+
+
+
+
+/*CONFIG STYLE =========================================*/
+
+.general-config {
+}
+
+.general-config > div {
+  border-bottom: 2px solid green;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.general-config .buttons {
+  font-size: 12px;
+}
+
+.general-config .buttons .restore {
+  margin-left: 2px;
+}
+
+/*MEANSUREMENTS LIST STYLE ============================*/
+
+.meansurements .table-header {
+  margin-bottom: 70px;
+}
+
+.meansurements .table-body {
+  text-align: center;
+}
+
+.meansurements .list-item {
+  width: 50%;
+  border-bottom: 2px solid green;
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.meansurements .list-item .date {
+  padding: 0px 15px 0px 15px;
+  border-right: 2px solid green;
+  border-left: 2px solid green;
+}
+
+.meansurements .list-item .rank {
+  padding-right: 30px;
+}
+
+.meansurements .item-options {
+  margin-left: 45px;
+}
+
+
+

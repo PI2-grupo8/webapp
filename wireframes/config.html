@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+    <title>Home Page</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <ul id="dropdown-admin" class="dropdown-content">
+      <li><a href="config.html">Configurações Gerais</a></li>
+      <li class="divider"></li>
+      <li><a href="calibracao_config">Calibração do Sensor</a></li>
+    </ul>
+
+    <ul id="dropdown-manuais" class="dropdown-content">
+      <li><a href="#">Guia Completo</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Limpeza do veículo</a></li>
+      <li><a href="#"></a></li>
+    </ul>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown-admin">Administração<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="pagina_medicoes.html">Minhas Medições</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown-manuais">Manuais<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- 
+      ============= DIFF =========
+      * Este é o conteúdo que caracteriza a página de configurações do host
+      a ser conectado. Gostaria que fosse tudo com AJAX.
+
+     -->
+    <div class="content general-config">
+    <h4>
+      <i class="material-icons prefix">settings</i>
+      <span>Administração</span>
+    </h4>
+
+    <div class="row get-data">
+      <form class="col s12">
+        <p class="row description">
+          Recupere os dados das medições feitas pelo veículo.
+        <p>
+        <div class="row">
+          <button class="btn waves-effect waves-light" type="button" name="action">Baixar dados
+            <i class="material-icons right">system_update_alt</i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="row parameters-config">
+      <form class="col s12">
+        <p class="row description">
+          Configure os parâmetros para a execução da medição.
+        <p>
+        <div class="row">
+          <div class="input-field col s3">
+            <i class="material-icons prefix">trending_up</i>
+            <input id="icon_prefix" type="number" min="1" max="50" class="validate">
+            <label for="icon_prefix">Qtd. de Fileiras</label>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="btn waves-effect waves-light save" type="button" name="action">Conectar e Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="row host-config">
+      <form class="col s12">
+        <p class="row description">
+          Esta é a configuração usada para acessar o veículo. O endereço padrão
+          é <b>10.0.0.3</b>, não modifique essa configuração a não ser que você tenha
+          certeza do que está fazendo. Mais informações podem ser encontradas
+          <a href="#">aqui</a>.
+        <p>
+        <div class="row">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">settings_remote</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Endereço IP do Host</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">settings_remote</i>
+            <input id="icon_telephone" type="tel" class="validate">
+            <label for="icon_telephone">Porta</label>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="btn waves-effect waves-light save" type="button" name="action">Salvar
+          </button>
+          <button class="btn waves-effect waves-light restore" type="button" name="action">Restaurar configuração padrão
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ============= DIFF ======================= --> 
+  <body>
+</html>
+          
