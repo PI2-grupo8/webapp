@@ -1,0 +1,33 @@
+<div style="position: relative; height: 400px; width: 400px;" class="heatmap">
+</div>
+
+<script src="../heatmap.min.js"></script>
+<script>
+
+  var heatmapInstance = h337.create({
+    container: document.querySelector('.heatmap')
+  });
+
+  var points = [];
+  var escala_maxima = 10;
+  var numero_medicoes;
+  var coord_x = 100;
+  var coord_y = 100;
+  var valor_umidade;
+
+  var point = {
+    x: coord_x,
+    y: coord_y,
+    value: valor_umidade
+  };
+
+  points.push(point);
+
+  var data = {
+    max: escala_maxima,
+    data: points
+  };
+
+  heatmapInstance.setData(data);
+
+</script>
