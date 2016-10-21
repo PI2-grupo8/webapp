@@ -1,9 +1,8 @@
 /*GENERAL STYLE =======================================*/
 
 .content {
-  padding: 5px 50px 50px 50px;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding: 5px 150px 0px 150px;
+  height: 100%;
 }
 
 h4 {
