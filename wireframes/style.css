@@ -18,7 +18,47 @@ h4 {
 
 /*INDEX STYLE =========================================*/
 
+.sep {
+  border-right: 2px solid green;
+  height: inherit;
+}
 
+.index-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.index-container i {
+  font-size: 150px !important;
+  padding-top: 5px;
+}
+
+.index-container p {
+  font-size: 20px;
+  margin: 0px
+}
+
+.general-config {
+  border-radius: 20px;
+  background: whitesmoke;
+}
+
+.sensor-config {
+  margin-top: 15px;
+  border-radius: 20px;
+  background: whitesmoke;
+}
+
+.index-container .meansurements {
+  border-radius: 20px;
+  background: whitesmoke;
+}
+
+.manuals {
+  margin-top: 15px;
+  border-radius: 20px;
+  background: whitesmoke;
+}
 
 
 
