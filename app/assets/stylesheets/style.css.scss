@@ -1,14 +1,18 @@
 /*GENERAL STYLE =======================================*/
-
-.content {
-  padding: 5px 150px 0px 150px;
+html, body {
   height: 100%;
+  width: 100%;
 }
 
-h4 {
-  border-bottom: 2px solid green;
-  padding-bottom: 5px;
+.main-content {
+  height: 100%;
+
+  h4 {
+    border-bottom: 2px solid green;
+    padding-bottom: 5px;
+  }
 }
+
 
 .nav-wrapper {
   padding: 0px 20px 0px 20px;
@@ -17,52 +21,33 @@ h4 {
 
 /*INDEX STYLE =========================================*/
 
-.sep {
-  border-right: 2px solid green;
-  height: inherit;
-}
-
 .index-container {
-  margin-top: 50px;
   text-align: center;
-}
-
-.index-container i {
-  font-size: 150px !important;
-  padding-top: 5px;
-}
-
-.index-container p {
-  font-size: 20px;
-  margin: 0px
-}
-
-.general-config {
-  border-radius: 20px;
   background: whitesmoke;
+  height: 100%;
+  margin-bottom: 0px;
+
+  a {
+    color: #26a69a;
+  } 
+
+  i {
+    font-size: 150px !important;
+    padding-top: 5px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 0px
+  }
+
+  div.card {
+    background: white;
+    border-radius: 20px;
+  }
 }
 
-.sensor-config {
-  margin-top: 15px;
-  border-radius: 20px;
-  background: whitesmoke;
-}
-
-.index-container .meansurements {
-  border-radius: 20px;
-  background: whitesmoke;
-}
-
-.manuals {
-  margin-top: 15px;
-  border-radius: 20px;
-  background: whitesmoke;
-}
-
-
-
-
-/*CONFIG STYLE =========================================*/
+/*GENERAL CONFIG STYLE =========================================*/
 
 .general-config {
 }
