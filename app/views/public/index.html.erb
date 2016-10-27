@@ -1,28 +1,34 @@
-<div class="row index-container">
-  <div class="left-side col s12 m5 l5 push-m1 push-l1">
-    <a href="config.html">
-      <div class="general-config">
-          <i class="fa fa-cogs" aria-hidden="true"></i>
-          <p>Configurações Gerais</p>
-      </div>
-    </a>
+  <div class="row index-container col s12">
+    <div class="cards">
+    <div class="left-side col s12 m5 l5 push-m1 push-l1">
+      <%= link_to ("settings/general") do %>
+        <div class="card general-config">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+            <p>Configurações Gerais</p>
+        </div>
+      <% end %>
 
-    <div class="sensor-config">
-      <i class="fa fa-wrench" aria-hidden="true"></i>
-      <p>Calibração do Sensor</p>
+      <%= link_to ("settings/sensor") do %>
+        <div class="card sensor-config">
+          <i class="fa fa-wrench" aria-hidden="true"></i>
+          <p>Calibração do Sensor</p>
+        </div>
+      <% end %>
+    </div>
+    <div class="right-side col s12 push-m1 push-l1 m5 l5">
+      <%= link_to ("meansurements/") do %>
+        <div class="card meansurements">
+          <i class="fa fa-line-chart" aria-hidden="true"></i>
+          <p>Minhas medições</p>
+        </div>
+      <% end %>
+
+      <%= link_to ("public/manuals") do %>
+      <div class="card manuals">
+        <i class="fa fa-file-text" aria-hidden="true"></i>
+        <p>Manuais</p>
+      </div>
+      <% end %>
+    </div>
     </div>
   </div>
-  <div class="right-side col s12 push-m1 push-l1 m5 l5">
-    <a href="pagina_medicoes.html">
-      <div class="meansurements">
-        <i class="fa fa-line-chart" aria-hidden="true"></i>
-        <p>Minhas medições</p>
-      </div>
-    </a>
-
-    <div class="manuals">
-      <i class="fa fa-file-text" aria-hidden="true"></i>
-      <p>Manuais</p>
-    </div>
-  </div>
-</div>

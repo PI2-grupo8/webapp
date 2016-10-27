@@ -25,20 +25,27 @@ html, body {
   text-align: center;
   background: whitesmoke;
   height: 100%;
-  margin-bottom: 0px;
+  padding: 1em 0 0 0;
 
   a {
     color: #26a69a;
   } 
 
   i {
-    font-size: 150px !important;
+    font-size: 10em !important;
     padding-top: 5px;
   }
 
   p {
-    font-size: 20px;
+    font-size: 1.2em;
     margin: 0px
+  }
+
+  div.cards {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+
   }
 
   div.card {
@@ -49,23 +56,21 @@ html, body {
 
 /*GENERAL CONFIG STYLE =========================================*/
 
-.general-config {
-}
+.general-config-container {
+  margin: 2em 10em 0em 10em; 
+  p.description {
+    font-size: 1em;
+  }
 
-.general-config > div {
-  border-bottom: 2px solid green;
-}
+  div.sep {
+    border-bottom: 1px solid green;
+  }
 
-.description {
-  font-size: 14px;
-}
+  .buttons {
+    clear: both;
+    font-size: 0.8em;
+  }
 
-.general-config .buttons {
-  font-size: 12px;
-}
-
-.general-config .buttons .restore {
-  margin-left: 2px;
 }
 
 /*MEANSUREMENTS LIST STYLE ============================*/
