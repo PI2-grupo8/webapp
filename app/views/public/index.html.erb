@@ -1,34 +1,50 @@
-  <div class="row index-container col s12">
-    <div class="cards">
-    <div class="left-side col s12 m5 l5 push-m1 push-l1">
+<div class="row index-container col s12">
+  <div class="cards">
+    <div class="row col s10 push-m1 push-l1">
       <%= link_to ("settings/general") do %>
-        <div class="card general-config">
+        <div class="col s12 m5 l5 push-m1 push-l1 card pos1 general-config">
             <i class="fa fa-cogs" aria-hidden="true"></i>
             <p>Configurações Gerais</p>
         </div>
       <% end %>
 
-      <%= link_to ("settings/sensor") do %>
-        <div class="card sensor-config">
-          <i class="fa fa-wrench" aria-hidden="true"></i>
-          <p>Calibração do Sensor</p>
-        </div>
-      <% end %>
-    </div>
-    <div class="right-side col s12 push-m1 push-l1 m5 l5">
       <%= link_to ("meansurements/") do %>
-        <div class="card meansurements">
+        <div class="col s12 m5 l5 push-m1 push-l1 card pos2 meansurements">
           <i class="fa fa-line-chart" aria-hidden="true"></i>
           <p>Minhas medições</p>
         </div>
       <% end %>
+    </div>
+
+    <div class="row col s10 push-m1 push-l1">
+      <%= link_to ("settings/sensor") do %>
+        <div class="col s12 m5 l5 push-m1 push-l1 card pos1 sensor-config">
+          <i class="fa fa-wrench" aria-hidden="true"></i>
+          <p>Calibração do Sensor</p>
+        </div>
+      <% end %>
 
       <%= link_to ("public/manuals") do %>
-      <div class="card manuals">
+      <div class="col s12 m5 l5 push-m1 push-l1 card pos2 manuals">
         <i class="fa fa-file-text" aria-hidden="true"></i>
         <p>Manuais</p>
       </div>
       <% end %>
     </div>
+
+    <div class="row col s10 push-m1 push-l1 secondary-menu">
+      <div class="col s12 m5 l5 push-m1 push-l1 card pos1 status-disconnected">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <p>Status da Conexão</p>
+      </div>
+
+      <%= link_to ("#") do %>
+      <div class="col s12 m5 l5 push-m1 push-l1 card pos2 start">
+        <i class="fa fa-bolt" aria-hidden="true"></i>
+        <p>Iniciar Medição</p>
+      </div>
+      <% end %>
     </div>
+
   </div>
+</div>

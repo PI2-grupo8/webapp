@@ -26,13 +26,14 @@ html, body {
   background: whitesmoke;
   height: 100%;
   padding: 1em 0 0 0;
+  margin-bottom: 0px;
 
   a {
     color: #26a69a;
   } 
 
   i {
-    font-size: 10em !important;
+    font-size: 10em;
     padding-top: 5px;
   }
 
@@ -42,15 +43,60 @@ html, body {
   }
 
   div.cards {
-    width: 80%;
-    height: 100%;
     margin: auto;
 
+    div.row {
+      margin: 0px;
+    }
   }
 
   div.card {
+    box-shadow: 0px 0px 30px grey;
     background: white;
     border-radius: 20px;
+  }
+
+  div.row .col.m5.l5.pos1 {
+    margin-right: 10px;
+  }
+
+  div.row .col.m5.l5.pos2 {
+    margin-left: 10px;
+  }
+
+  div.secondary-menu{
+    a {
+      color: black;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+    }
+
+    div.start {
+      box-shadow: 0px 0px 30px green;
+      background: lightgreen;
+    }
+
+    div.status-connected div.start {
+      box-shadow: 0px 0px 30px green;
+      background: lightgreen;
+    }
+
+    div.status-disconnected {
+      box-shadow: 0px 0px 30px grey;
+      background: grey;
+    }
+    
+    i {
+      font-size: 3em;
+    }
+    p {
+      margin-left: 0.4em;
+      padding: 1%;
+      font-size: 2em;
+
+    }
   }
 }
 
