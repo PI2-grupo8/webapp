@@ -48,7 +48,7 @@ h4 {
   background: whitesmoke;
 }
 
-.index-container .meansurements {
+.index-container .measurements {
   border-radius: 20px;
   background: whitesmoke;
 }
@@ -83,17 +83,17 @@ h4 {
   margin-left: 2px;
 }
 
-/*MEANSUREMENTS LIST STYLE ============================*/
+/*measurements LIST STYLE ============================*/
 
-.meansurements .table-header {
+.measurements .table-header {
   margin-bottom: 70px;
 }
 
-.meansurements .table-body {
+.measurements .table-body {
   text-align: center;
 }
 
-.meansurements .list-item {
+.measurements .list-item {
   width: 50%;
   border-bottom: 2px solid green;
   display: inline-flex;
@@ -101,17 +101,17 @@ h4 {
   margin-bottom: 26px;
 }
 
-.meansurements .list-item .date {
+.measurements .list-item .date {
   padding: 0px 15px 0px 15px;
   border-right: 2px solid green;
   border-left: 2px solid green;
 }
 
-.meansurements .list-item .rank {
+.measurements .list-item .rank {
   padding-right: 30px;
 }
 
-.meansurements .item-options {
+.measurements .item-options {
   margin-left: 45px;
 }
 
