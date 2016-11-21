@@ -1,6 +1,6 @@
-
-$valores_y = [2.1, 3.02, 4.75, 7.18, 11.21, 17.17, 26.33, 41.01, 62.22, 96]
-$valores_x = [8, 16, 24, 32, 40, 48, 56, 64]
+#valores de teste
+$valores_x = [0, 8, 16, 24, 32, 40, 48, 56, 64]
+$valores_y = [0.00001, 0.0000079, 0.0000062, 0.0000049, 0.0000038, 0.000003, 0.0000024, 0.0000019, 0.0000015]
 $n = 9
 
 def calcula_somatorio(lista_numeros)
@@ -13,25 +13,6 @@ def calcula_media(lista_numeros)
 	return media
 end
 
-
-
-def calcula_media_valores_x
-	values = [8, 16, 24, 32, 40, 48, 56, 64]
-	n = 9
-
-	somatorio = values.inject(0, :+)
-
-	resultado = somatorio / n
-
-	return resultado
-end
-
-def calcula_media_valores_y
-	somatorio = $valores_y.inject(0, :+)
-	resultado = somatorio / $m
-	return resultado
-end
-
 def calcula_log_natural(lista_numeros)
 	new_numbers = []
 	new_numbers = lista_numeros.map do |number|
@@ -40,53 +21,36 @@ def calcula_log_natural(lista_numeros)
 	return new_numbers
 end
 
-#esse método pode ser integrado com o método calcula_media_valores_y, inicialmente está duplicado, a melhorar!!
-def calcula_media_valores_lny
-	somatorio = calcula_log_natural_y.inject(0, :+)
-	resultado = somatorio / 8 #aqui o denominador receberá a quantidade de valores do array de y
-	return resultado
-end
-
-def calcula_x_intermediario
-	values = [8, 16, 24, 32, 40, 48, 56, 64]
-	media_de_x = calcula_media_valores_x
+def calcula_valores_intermediarios(lista_numeros, media)
 	new_numbers = []
-	new_numbers = values.map do |number|
-		number - media_de_x
+	new_numbers = lista_numeros.map do |number|
+		number - media
 	end
 	return new_numbers
 end
 
-def calcula_ajuste_angular
-	x_intermediario = calcula_x_intermediario
-	log_natural_y = calcula_log_natural_y
-	resultado = x_intermediario.size.times.collect {|i| x_intermediario[i] * log_natural_y[i]}
+def calcula_produto_matricial(lista_numeros_1, lista_numeros_2)
+	resultado = lista_numeros_1.size.times.collect {|i| lista_numeros_1[i] * lista_numeros_2[i]}
 	return resultado
 end
 
-def calcula_quadrado_x_intermediario
-	x_intermediario = calcula_x_intermediario
+def calcula_quadrado_lista(lista_numeros)
 	new_numbers = []
-	new_numbers = x_intermediario.map do |number|
+	new_numbers = lista_numeros.map do |number|
 		number ** 2
 	end
 	return new_numbers
 end
 
-def calcula_media_ajuste_angular
-	ajuste_angular = calcula_ajuste_angular
-	somatorio = ajuste_angular.inject(0, :+)
-	media = somatorio / 8
-	return media
+def calcula_divisao(x, y)
+	resultado_divisao = x / y
+	return resultado_divisao
 end
 
-def calcula_media_quadrado_x_intermediario
-	quadrado_x_intermediario = calcula_quadrado_x_intermediario
-	somatorio = quadrado_x_intermediario.inject(0, :+)
-	media = somatorio / 8
-	return media
+def calcula_exponencial(numero)
+	exponencial = Math::E ** numero
+	return exponencial
 end
-
 
 resultado_somatorio_x = calcula_somatorio($valores_x)
 media_x = calcula_media(resultado_somatorio_x)
@@ -98,7 +62,20 @@ lista_y_linha = calcula_log_natural($valores_y)
 resultado_somatorio_lny = calcula_somatorio(lista_y_linha)
 media_y_linha = calcula_media(resultado_somatorio_lny)
 
-puts media_y_linha
+valores_intermediarios_x = calcula_valores_intermediarios($valores_x, media_x)
+produto_matricial = calcula_produto_matricial(valores_intermediarios_x, lista_y_linha)
+somatorio_produto_matricial = calcula_somatorio(produto_matricial)
+
+quadrado_valores_intermediarios_x = calcula_quadrado_lista(valores_intermediarios_x)
+somatorio_quadrado_valores_intermediarios_x = calcula_somatorio(quadrado_valores_intermediarios_x)
+
+a_linha = calcula_divisao(somatorio_produto_matricial, somatorio_quadrado_valores_intermediarios_x)
+b_linha = media_y_linha - a_linha * media_x
+a = a_linha
+b = calcula_exponencial(b_linha)
+
+puts a
+puts b
 
 
 
