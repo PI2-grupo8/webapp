@@ -24,7 +24,7 @@
     <% @measurements.each do |measurement| %>
       <tr>
         <td><%= measurement.coleta %></td>
-        <td><%= measurement.horario %></td>
+        <td><%= measurement.horario.to_formatted_s(:time) %></td>
         <td><%= measurement.dia %></td>
         <td><%= measurement.latitude %></td>
         <td><%= measurement.longitude %></td>
