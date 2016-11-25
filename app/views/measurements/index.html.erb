@@ -1,39 +1,35 @@
-<div class="content measurements">
-  <h4>
-    <i class="material-icons prefix">assessment</i>
-    <span>Medições</span>
-  </h4>
-</div>
+<html>
 
-<%= flash[:notice] %>
-<table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>Horário</th>
-      <th>Dia</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Umidade do solo</th>
-      <th>Umidade do solo calibrada</th>
-      <th>Umidade do ar</th>
-      <th>Temperatura do ar</th>
-    </th>
-  </thead>
-  <tbody>
-    <% @measurements.each do |measurement| %>
-      <tr>
-        <td><%= measurement.coleta %></td>
-        <td><%= measurement.horario.to_formatted_s(:time) %></td>
-        <td><%= measurement.dia %></td>
-        <td><%= measurement.latitude %></td>
-        <td><%= measurement.longitude %></td>
-        <td><%= measurement.umidade_solo %></td>
-        <td><%= measurement.umidade_solo_calibrada %></td>
-        <td><%= measurement.umidade_ar %></td>
-        <td><%= measurement.temperatura_ar %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<div>
+  <div class="content measurements">
+    <h4>
+      <i class="material-icons prefix">assessment</i>
+      <span>Medições</span>
+    </h4>
+  </div>
+
+  <table class="centered">
+
+    <thead>
+       <tr><th>Coleta</th><th>Horário</th><th>Dia</th><th>Latitude</th><th>Longitude</th><th>Umidade do solo</th><th>Umidade do solo calibrada</th><th>Umidade do ar</th><th>Temperatura do ar</th></tr>
+    </thead>
+
+    <tbody>
+      <% @measurements.each do |measurement| %>
+        <tr>
+          <td><%= measurement.coleta %></td>
+          <td><%= measurement.horario.to_formatted_s(:time) %></td>
+          <td><%= measurement.dia %></td>
+          <td><%= measurement.latitude %></td>
+          <td><%= measurement.longitude %></td>
+          <td><%= measurement.umidade_solo %></td>
+          <td><%= measurement.umidade_solo_calibrada %></td>
+          <td><%= measurement.umidade_ar %></td>
+          <td><%= measurement.temperatura_ar %></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+
+</html>
