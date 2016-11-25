@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
-  root to: "measurements#index"
+  # root to: "measurements#index"
   
   get 'measurements/index'
 

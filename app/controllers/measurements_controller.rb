@@ -5,6 +5,6 @@ class MeasurementsController < ApplicationController
 
   def import
     Measurement.import(params[:file])
-    redirect_to root_url, notice: "Measurement data imported!"
+    redirect_to root_url
   end
 end
