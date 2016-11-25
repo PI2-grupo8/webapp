@@ -1,7 +1,7 @@
 class CreateMeasurements < ActiveRecord::Migration[5.0]
   def change
     create_table :measurements do |t|
-      t.integer :id
+      t.integer :coleta
       t.time :horario
       t.date :dia
       t.float :latitude

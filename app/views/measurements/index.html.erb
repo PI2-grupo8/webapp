@@ -1,2 +1,46 @@
-<h1>Measurements#index</h1>
-<p>Find me in app/views/measurements/index.html.erb</p>
+<div class="content measurements">
+  <h4>
+    <i class="material-icons prefix">assessment</i>
+    <span>Medições</span>
+  </h4>
+</div>
+
+<%= flash[:notice] %>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Horário</th>
+      <th>Dia</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Umidade do solo</th>
+      <th>Umidade do solo calibrada</th>
+      <th>Umidade do ar</th>
+      <th>Temperatura do ar</th>
+    </th>
+  </thead>
+  <tbody>
+    <% @measurements.each do |measurement| %>
+      <tr>
+        <td><%= measurement.coleta %></td>
+        <td><%= measurement.horario %></td>
+        <td><%= measurement.dia %></td>
+        <td><%= measurement.latitude %></td>
+        <td><%= measurement.longitude %></td>
+        <td><%= measurement.umidade_solo %></td>
+        <td><%= measurement.umidade_solo_calibrada %></td>
+        <td><%= measurement.umidade_ar %></td>
+        <td><%= measurement.temperatura_ar %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+
+<h4>Importar</h4>
+  <%= form_tag import_measurements_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Importar" %>
+  <% end %>
+</div>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+    resources :measurements do
+    collection { post :import }
+  end
+
+  root to: "measurements#index"
+  
   get 'measurements/index'
 
   get 'measurements/import'

@@ -10,6 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161125124653) do
+
+  create_table "measurements", force: :cascade do |t|
+    t.integer  "coleta"
+    t.time     "horario"
+    t.date     "dia"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.float    "umidade_solo"
+    t.float    "umidade_solo_calibrada"
+    t.float    "umidade_ar"
+    t.float    "temperatura_ar"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
 end
