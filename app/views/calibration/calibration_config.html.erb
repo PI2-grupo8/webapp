@@ -1,0 +1,67 @@
+<div class="content general-config">
+    <div class="row host-config">
+    
+
+      <form controller="calibration" action="create" method="post" class="col s12">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <p><h4>Calibração do Sensor</h4></p>
+        <p class="row description">
+          Insira os valores medido pelo sensor para cada quantidade de água na amostra do seu solo aqui.
+        <p>
+        <div class="row">
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[5_por_cento]">
+            <label for="icon_telephone">5 gramas</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="grade" type="number" step="any" class="validate" name="calibration[10_por_cento]">
+            <label for="grade">10 gramas</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[15_por_cento]">
+            <label for="icon_telephone">15 gramas</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[20_por_cento]">
+            <label for="icon_telephone">20 gramas</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[25_por_cento"]>
+            <label for="icon_telephone">25 gramas</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[30_por_cento]">
+            <label for="icon_telephone">30 gramas</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[40_por_cento]">
+            <label for="icon_telephone">40 gramas</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[50_por_cento]">
+            <label for="icon_telephone">50 gramas</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s2">
+            <i class="material-icons prefix">format_color_fill</i>
+            <input id="icon_telephone" type="number" step="any" class="validate" name="calibration[60_por_cento]">
+            <label for="icon_telephone">60 gramas</label>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="btn waves-effect waves-light save" type="submit" name="action">Calibrar sensor
+          </button>
+        </div>
+      </form>
+    </div>

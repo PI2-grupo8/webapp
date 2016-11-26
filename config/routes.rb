@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :measurements do
     collection { post :import }
   end
+  match 'calibration(/:action)', controller: 'calibration', via: :all
+  #post '/calibration' => 'calibration#create'
+
 end

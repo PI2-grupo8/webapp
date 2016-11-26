@@ -15,8 +15,4 @@ class SettingsController < ApplicationController
     end
   end
 
-  def sensor
-
-  end
-
 end
