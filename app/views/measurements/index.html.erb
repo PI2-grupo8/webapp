@@ -25,16 +25,17 @@
     </thead>
 
     <tbody>
-      <% @measurements.each do |measurement| %>
+      <% @measurements.each_with_index do |measurement, index| %>
         <tr>
-          <td><%= measurement.coleta %></td>
-          <td><%= measurement.horario.to_formatted_s(:time) %></td>
-          <td><%= measurement.dia %></td>
+          <td><%= index %></td>
+          <% puts measurement %>
+          <td><%= measurement.gathering_time.to_formatted_s(:time) %></td>
+          <td><%= measurement.gathering_date %></td>
           <td><%= measurement.latitude %></td>
           <td><%= measurement.longitude %></td>
-          <td><%= measurement.umidade_solo %></td>
-          <td><%= measurement.umidade_ar %></td>
-          <td><%= measurement.temperatura_ar %></td>
+          <td><%= measurement.absolute_humity %></td>
+          <td><%= measurement.air_humity %></td>
+          <td><%= measurement.air_temperature %></td>
         </tr>
       <% end %>
     </tbody>
