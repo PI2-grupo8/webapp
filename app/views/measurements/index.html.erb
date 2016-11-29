@@ -1,0 +1,45 @@
+<html>
+
+  <div class="content measurements">
+    <h4>
+      <i class="material-icons prefix"></i>
+      <span>Medições</span>
+    </h4>
+  </div>
+
+  <%= form_tag import_measurements_path, multipart: true do %>
+    <%= submit_tag "Ler CSV" %>
+  <% end %>
+
+  <table class="centered">
+
+    <thead>
+       <tr><th>Coleta</th>
+           <th>Horário</th>
+           <th>Dia</th>
+           <th>Latitude</th>
+           <th>Longitude</th>
+           <th>Umidade do solo</th>
+           <th>Umidade do ar</th>
+           <th>Temperatura do ar</th></tr>
+    </thead>
+
+    <tbody>
+      <% @measurements.each_with_index do |measurement, index| %>
+        <tr>
+          <td><%= index %></td>
+          <% puts measurement %>
+          <td><%= measurement.gathering_time.to_formatted_s(:time) %></td>
+          <td><%= measurement.gathering_date %></td>
+          <td><%= measurement.latitude %></td>
+          <td><%= measurement.longitude %></td>
+          <td><%= measurement.absolute_humity %></td>
+          <td><%= measurement.air_humity %></td>
+          <td><%= measurement.air_temperature %></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+</html>
