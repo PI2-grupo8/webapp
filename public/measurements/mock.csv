@@ -1,4 +1,4 @@
-coleta,gathering_time,gathering_date,latitude,longitude,sensor_humity,absolute_humity,air_humity,air_temperature
+coleta,gathering_time,gathering_date,latitude,longitude,sensor_humidity,absolute_humidity,air_humidity,air_temperature
 1,11:49,04/02/2016,-2.63199,-80.38808,13,54,90,33
 2,16:53,21/05/2016,51.8334,38.1302,18,60,89,10
 3,23:35,24/07/2016,30.53507,120.85229,56,77,90,55

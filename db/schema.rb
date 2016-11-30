@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20161127113323) do
     t.date     "gathering_date"
     t.float    "latitude"
     t.float    "longitude"
-    t.float    "sensor_humity"
-    t.float    "absolute_humity"
-    t.float    "air_humity"
+    t.float    "sensor_humidity"
+    t.float    "absolute_humidity"
+    t.float    "air_humidity"
     t.float    "air_temperature"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

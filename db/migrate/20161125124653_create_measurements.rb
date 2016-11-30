@@ -5,9 +5,9 @@ class CreateMeasurements < ActiveRecord::Migration[5.0]
       t.date    :gathering_date
       t.float   :latitude
       t.float   :longitude
-      t.float   :sensor_humity
-      t.float   :absolute_humity
-      t.float   :air_humity
+      t.float   :sensor_humidity
+      t.float   :absolute_humidity
+      t.float   :air_humidity
       t.float   :air_temperature
       t.timestamps
     end
