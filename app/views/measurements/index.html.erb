@@ -11,6 +11,8 @@
     <%= submit_tag "Ler CSV" %>
   <% end %>
 
+  <%= link_to "Mapa de Calor", measurements_humidity_heatmap_path %>
+
   <table class="centered">
 
     <thead>
@@ -27,8 +29,7 @@
     <tbody>
       <% @measurements.each_with_index do |measurement, index| %>
         <tr>
-          <td><%= index %></td>
-          <% puts measurement %>
+          <td><%= measurement.gathering_id %></td>
           <td><%= measurement.gathering_time.to_formatted_s(:time) %></td>
           <td><%= measurement.gathering_date %></td>
           <td><%= measurement.latitude %></td>

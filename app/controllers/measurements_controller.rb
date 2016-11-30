@@ -7,4 +7,8 @@ class MeasurementsController < ApplicationController
     Measurement.import(params[:file])
     redirect_to measurements_url
   end
+
+  def humidity_heatmap
+
+  end
 end

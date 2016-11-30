@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161127113323) do
   end
 
   create_table "measurements", force: :cascade do |t|
+    t.integer  "gathering_id"
     t.time     "gathering_time"
     t.date     "gathering_date"
     t.float    "latitude"
