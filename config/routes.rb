@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   match 'settings(/:action)', controller: 'settings', via: :all
 
+
+  match 'manual(/:action)', controller: 'manual', via: :all
   resources :measurements do
     collection { post :import }
   end
