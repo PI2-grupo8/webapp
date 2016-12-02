@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/measurements/air_humidity_heatmap' => 'measurements#air_humidity_heatmap'
   get '/measurements/air_temperature_heatmap' => 'measurements#air_temperature_heatmap'
 
+
+  match 'manual(/:action)', controller: 'manual', via: :all
   resources :measurements do
     collection { post :import }
   end
