@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <div class="content measurements">
+    <h4>
+      <i class="material-icons prefix"></i>
+      <span>Pontos de Umidade || Mapa de Calor</span>
+    </h4>
+  </div>
+
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 85%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="map"></div>
+  </body>
+
+
+  <script>
+
+    var map, heatmap;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: {lat: 37.775, lng: -122.434},
+        disableDefaultUI: true,
+        zoomControl: true,
+        mapTypeId: 'satellite'
+      });
+
+      heatmap = new google.maps.visualization.HeatmapLayer({
+        data: getPoints(),
+        map: map
+      });
+    }
+
+    var i = 0;
+    var js_lat = [];
+    var js_long = [];
+    var js_humidity = [];
+
+    for (i = 0; i < 10 ; i++){
+      js_lat[i] = <%= @js_lat %>[i];
+      js_long[i] = <%= @js_long %>[i];
+      js_humidity[i] = <%= @js_humidity %>[i];
+    }
+
+    function getPoints() {
+      return [
+        new google.maps.LatLng(js_lat[0], js_long[0]),
+        new google.maps.LatLng(37.782551, -122.445368),
+        new google.maps.LatLng(37.753837, -122.403172),
+        new google.maps.LatLng(37.752986, -122.403112),
+        new google.maps.LatLng(37.751266, -122.403355)
+        ];
+      }
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuUKw5Dpn72KHksmdOvPHKA6PVfo2jVhc&libraries=visualization&callback=initMap">
+  </script>
