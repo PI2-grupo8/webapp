@@ -63,7 +63,7 @@ class CalibrationController < ApplicationController
 			Math.log(number,Math::E)
 		end
 		return new_numbers
-	end
+    end
 
 	def calcula_valores_intermediarios(lista_numeros, media)
 		new_numbers = []
