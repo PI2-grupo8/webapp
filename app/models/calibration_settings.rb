@@ -2,8 +2,7 @@ class CalibrationSettings < ApplicationRecord
 
   belongs_to :settings
 
-  after_save :calculate 
-
+  after_save :calculate
 
   def calculate
 

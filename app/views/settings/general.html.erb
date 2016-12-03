@@ -16,14 +16,14 @@
 </div>
 
 <div class='row parameters-config sep'>
-  <%= form_for :settings, url: 'google' do |f| %>
+  <%= form_for :settings, url: '/settings/write_config' do |f| %>
     <p class='description'>
       Configure os parâmetros para a execução da medição.
     <p>
     <div class='input-field col s3'>
       <i class='material-icons prefix'>trending_up</i>
-      <%= f.label(:amount_of_rows, 'Qtd. de Fileiras', class: 'active') %>
       <%= f.number_field(:amount_of_rows, class: 'validate') %>
+      <%= f.label(:amount_of_rows, 'Qtd. de Fileiras', class: 'active') %>
     </div>
     <div class='row buttons'>
       <%= f.button('Conectar e Salvar', class: 'btn waves-effect waves-light save') %>
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class='buttons'>
-      <%= f.button('Conectar e Salvar', class: 'btn waves-effect waves-light save', data: { restore: false }) %>
+      <%= f.button('Salvar', class: 'btn waves-effect waves-light save', data: { restore: false }) %>
       <%= f.button('Restaurar configuração padrão', class: 'btn waves-effect waves-light save', data: { restore: true }) %>
     </div>
   <% end %>

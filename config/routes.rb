@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection { post :import }
   end
   match 'calibration(/:action)', controller: 'calibration', via: :all
+  match 'net(/:action)', controller: 'sockets', via: :all
   #post '/calibration' => 'calibration#create'
 
 end

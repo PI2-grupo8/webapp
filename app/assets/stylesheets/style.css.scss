@@ -13,9 +13,14 @@ html, body {
   }
 }
 
-
 .nav-wrapper {
   padding: 0px 20px 0px 20px;
+
+  i {
+    font-size: 2em;
+    margin-right: 10px;
+    border-right: 1px;
+  }
 
 }
 

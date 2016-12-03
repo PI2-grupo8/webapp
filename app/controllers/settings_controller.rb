@@ -14,5 +14,4 @@ class SettingsController < ApplicationController
       @settings.save!
     end
   end
-
 end
