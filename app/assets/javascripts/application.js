@@ -16,3 +16,31 @@
 //= require bootstrap-sprockets
 //= require materialize.min.js
 //= require connection-handler.js
+
+$(document).ready(function () {
+	$(document).on("click", ".js-toggle__button1", function (e) {
+		$(".js-toggle__text1").toggle();
+		$(this).next(".js-toggle__text1").toggle();
+	});
+});
+
+$(document).ready(function () {
+	$(document).on("click", ".js-toggle__button2", function (e) {
+		$(".js-toggle__text2").toggle();
+		$(this).next(".js-toggle__text2").toggle();
+	});
+});
+
+$(document).ready(function () {
+	$(document).on("click", ".js-toggle__button3", function (e) {
+		$(".js-toggle__text3").toggle();
+		$(this).next(".js-toggle__text3").toggle();
+	});
+});
+
+$(document).ready(function () {
+	$(document).on("click", ".js-toggle__button4", function (e) {
+		$(".js-toggle__text4").toggle();
+		$(this).next(".js-toggle__text4").toggle();
+	});
+});
