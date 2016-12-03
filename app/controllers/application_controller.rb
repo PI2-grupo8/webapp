@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   CMD_KILL        = 40
   FTP_SERVER_PORT = 5005
   CONF_FILE_PATH  = Rails.root.join('public', 'meansure.conf')
+
+  def index
+    render :file => 'index'
+  end
 end

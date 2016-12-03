@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'public#index'
+  root 'application#index'
 
   get 'measurements/index'
   get 'measurements/import'
