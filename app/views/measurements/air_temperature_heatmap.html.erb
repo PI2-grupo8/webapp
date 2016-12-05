@@ -4,7 +4,7 @@
   <div class="content measurements">
     <h4>
       <i class="material-icons prefix"></i>
-      <span>Pontos de Umidade do Solo || Mapa de Calor</span>
+      <span>Pontos de Temperatura do Ar || Mapa de Calor</span>
     </h4>
   </div>
 
@@ -54,7 +54,7 @@
       var i = 0;
       var js_lat = [];
       var js_long = [];
-      var js_humidity = [];
+      var js_air_temperature = [];
       var coordinates = [];
       var coordinates_weighted = [];
 
@@ -78,10 +78,10 @@
       for (i = 0; i < 10 ; i++){
         js_lat[i] = <%= @js_lat %>[i];
         js_long[i] = <%= @js_long %>[i];
-        js_humidity[i] = <%= @js_humidity %>[i];
+        js_air_temperature[i] = <%= @js_air_temperature %>[i];
 
         coordinates[i] = new google.maps.LatLng(js_lat[i], js_long[i]);
-        coordinates_weighted[i] = {location: coordinates[i], weight: js_humidity[i]};
+        coordinates_weighted[i] = {location: coordinates[i], weight: js_air_temperature[i]};
       }
 
       map = new google.maps.Map(document.getElementById('map'), {
@@ -101,7 +101,7 @@
         opacity: 1
       });
 
-      heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+      // heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
     }
 
 
