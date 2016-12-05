@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20161127113323) do
     t.float    "absolute_humidity"
     t.float    "air_humidity"
     t.float    "air_temperature"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "settings", force: :cascade do |t|

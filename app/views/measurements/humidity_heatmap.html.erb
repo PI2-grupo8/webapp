@@ -43,39 +43,35 @@
 
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: {lat: 37.775, lng: -122.434},
+        zoom: 12,
+        center: {lat: -15.7942287, lng: -47.8821657},
         disableDefaultUI: true,
         zoomControl: true,
         mapTypeId: 'satellite'
       });
 
+      var i = 0;
+      var js_lat = [];
+      var js_long = [];
+      var js_humidity = [];
+      var coordinates = new Array();
+
+      for (i = 0; i < 10 ; i++){
+        js_lat[i] = <%= @js_lat %>[i];
+        js_long[i] = <%= @js_long %>[i];
+        js_humidity[i] = <%= @js_humidity %>[i];
+
+        coordinates[i] = new google.maps.LatLng(js_lat[i], js_long[i]);
+      }
+
       heatmap = new google.maps.visualization.HeatmapLayer({
-        data: getPoints(),
-        map: map
+        data: coordinates,
+        map: map,
+        radius: 5,
+        opacity: 1
       });
     }
 
-    var i = 0;
-    var js_lat = [];
-    var js_long = [];
-    var js_humidity = [];
-
-    for (i = 0; i < 10 ; i++){
-      js_lat[i] = <%= @js_lat %>[i];
-      js_long[i] = <%= @js_long %>[i];
-      js_humidity[i] = <%= @js_humidity %>[i];
-    }
-
-    function getPoints() {
-      return [
-        new google.maps.LatLng(js_lat[0], js_long[0]),
-        new google.maps.LatLng(37.782551, -122.445368),
-        new google.maps.LatLng(37.753837, -122.403172),
-        new google.maps.LatLng(37.752986, -122.403112),
-        new google.maps.LatLng(37.751266, -122.403355)
-        ];
-      }
   </script>
 
   <script async defer
