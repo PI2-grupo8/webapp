@@ -42,19 +42,13 @@
     var map, heatmap;
 
     function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: {lat: -15.7942287, lng: -47.8821657},
-        disableDefaultUI: true,
-        zoomControl: true,
-        mapTypeId: 'satellite'
-      });
 
       var i = 0;
       var js_lat = [];
       var js_long = [];
       var js_humidity = [];
-      var coordinates = new Array();
+      var coordinates = [];
+      var coordinates_weighted = [];
 
       for (i = 0; i < 10 ; i++){
         js_lat[i] = <%= @js_lat %>[i];
@@ -62,12 +56,22 @@
         js_humidity[i] = <%= @js_humidity %>[i];
 
         coordinates[i] = new google.maps.LatLng(js_lat[i], js_long[i]);
+        coordinates_weighted[i] = {location: coordinates[i], weight: js_humidity[i]};
       }
 
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        // center: {lat: -15.7942287, lng: -47.8821657},
+        center: {lat: js_lat[0], lng: js_long[0]},
+        disableDefaultUI: true,
+        zoomControl: true,
+        mapTypeId: 'satellite'
+      });
+
       heatmap = new google.maps.visualization.HeatmapLayer({
-        data: coordinates,
+        data: coordinates_weighted,
         map: map,
-        radius: 5,
+        radius: 10,
         opacity: 1
       });
     }
