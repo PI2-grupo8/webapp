@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   ActionController::Parameters.permit_all_parameters = true
 
   CMD_START       = 10
+  CMD_CLOSE       = 11
   CMD_SYNC        = 20
   CMD_WRITE_CONF  = 30
   CMD_KILL        = 40
@@ -11,5 +12,5 @@ class ApplicationController < ActionController::Base
 
   def index
     render :file => 'index'
-  end
+ end
 end

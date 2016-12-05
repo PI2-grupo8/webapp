@@ -14,4 +14,8 @@ class Settings < ApplicationRecord
 
   end
 
+  def self.getInstance
+    Settings.last || Settings.instance
+  end
+
 end

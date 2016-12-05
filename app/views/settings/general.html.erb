@@ -16,7 +16,7 @@
 </div>
 
 <div class='row parameters-config sep'>
-  <%= form_for :settings, url: '/settings/write_config' do |f| %>
+  <%= form_for :settings, url: '/net/setup' do |f| %>
     <p class='description'>
       Configure os parâmetros para a execução da medição.
     <p>
@@ -47,8 +47,14 @@
       </div>
       <div class='input-field col s2'>
         <i class='material-icons prefix'>settings_remote</i>
-        <%= f.number_field(:port, class: 'validate')%>
-        <%= f.label(:port, 'Porta', class: 'active') %>
+        <%= f.number_field(:tcp_port, class: 'validate')%>
+        <%= f.label(:port, 'Porta TCP', class: 'active') %>
+      </div>
+
+      <div class='input-field col s2'>
+        <i class='material-icons prefix'>settings_remote</i>
+        <%= f.number_field(:ftp_port, class: 'validate')%>
+        <%= f.label(:port, 'Porta FTP', class: 'active') %>
       </div>
     </div>
     <div class='buttons'>
