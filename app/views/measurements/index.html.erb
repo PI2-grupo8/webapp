@@ -1,31 +1,64 @@
 <html>
 
+  <style>
+    #titulo {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    #tabela {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    #botao {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    #botao2 {
+      padding-left: 10%;
+    }
+  </style>
+
   <div class="content measurements">
+
+  <div id="titulo">
     <h4>
-      <i class="material-icons prefix"></i>
+      <i class="material-icons prefix">assessment</i>
       <span>Medições</span>
     </h4>
   </div>
 
-  <style>
-    #tabela {
-      padding-left: 5%;
-      padding-right: 5%;
-    }
-  </style>
+  <div id="botao">
+    <%= form_tag import_measurements_path, multipart: true, id: 'myForm' do %>
+    <% end %>
 
-  <%= form_tag import_measurements_path, multipart: true do %>
-    <%= submit_tag "Ler CSV" %>
-  <% end %>
+    <a id="read_data" class="waves-effect waves-light btn">Ler dados</a>
 
-  <%= link_to "Umidade do solo", measurements_humidity_heatmap_path %>
-  <%= link_to "Umidade do ar", measurements_air_humidity_heatmap_path %>
-  <%= link_to "Temperatura do ar", measurements_air_temperature_heatmap_path %>
+
+    <script>
+      $(document).ready(function() {
+        $('#read_data').on('click', function() { $('#myForm').submit(); });
+      });
+
+    </script>
+  </div>
+
+  <br>
+
+  <div id="botao2">
+    <%= link_to "Heatmap - Umidade do solo", measurements_humidity_heatmap_path, class: "btn waves-effect waves-light red" %>
+    <%= link_to "Heatmap - Umidade do ar", measurements_air_humidity_heatmap_path, class: "btn waves-effect waves-light red" %>
+    <%= link_to "Heatmap - Temperatura do ar", measurements_air_temperature_heatmap_path, class: "btn waves-effect waves-light red" %>
+  </div>
 
   <div id="tabela">
     <table class="centered">
     <thead>
        <tr>
+           <!-- <th>Coleta</th> -->
+           <!-- <th>Umidade do Solo</th>
+           <th>Umidade do Ar</th>
+           <th>Temperatura do Ar</th> -->
+           <!-- <th>Apagar dados</th> -->
            <th>Horário</th>
            <th>Dia</th>
            <th>Latitude</th>
@@ -39,6 +72,10 @@
     <tbody>
       <% @measurements.each_with_index do |measurement, index| %>
         <tr>
+          <!-- <td><%= link_to measurement.started_at %></td>
+          <td><%= link_to "x", measurements_humidity_heatmap_path %></td>
+          <td><%= link_to "x", measurements_air_humidity_heatmap_path %></td>
+          <td><%= link_to "x", measurements_air_temperature_heatmap_path %></td> -->
           <td><%= measurement.gathering_time.to_formatted_s(:time) %></td>
           <td><%= measurement.gathering_date %></td>
           <td><%= measurement.latitude %></td>
