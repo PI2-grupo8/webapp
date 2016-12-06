@@ -1,4 +1,15 @@
-<div class="row index-container col s12">
+<style>
+  #imagem {
+    padding-left: 40%;
+    width: 50%;
+  }
+</style>
+
+<div id="imagem">
+  <%= image_tag('logo.png', :size => "300x200") %>
+</div>
+
+<div class="row index-container col s12 white">
   <div class="cards">
     <div class="row col s10 push-m1 push-l1">
       <%= link_to ("settings/general") do %>
