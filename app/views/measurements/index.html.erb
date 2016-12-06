@@ -7,6 +7,13 @@
     </h4>
   </div>
 
+  <style>
+    #tabela {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  </style>
+
   <%= form_tag import_measurements_path, multipart: true do %>
     <%= submit_tag "Ler CSV" %>
   <% end %>
@@ -15,23 +22,23 @@
   <%= link_to "Umidade do ar", measurements_air_humidity_heatmap_path %>
   <%= link_to "Temperatura do ar", measurements_air_temperature_heatmap_path %>
 
-  <table class="centered">
-
+  <div id="tabela">
+    <table class="centered">
     <thead>
-       <tr><th>Coleta</th>
+       <tr>
            <th>Horário</th>
            <th>Dia</th>
            <th>Latitude</th>
            <th>Longitude</th>
            <th>Umidade do solo</th>
            <th>Umidade do ar</th>
-           <th>Temperatura do ar</th></tr>
+           <th>Temperatura do ar</th>
+       </tr>
     </thead>
 
     <tbody>
       <% @measurements.each_with_index do |measurement, index| %>
         <tr>
-          <td><%= measurement.gathering_id %></td>
           <td><%= measurement.gathering_time.to_formatted_s(:time) %></td>
           <td><%= measurement.gathering_date %></td>
           <td><%= measurement.latitude %></td>
@@ -42,7 +49,7 @@
         </tr>
       <% end %>
     </tbody>
-
   </table>
+  </div>
 
 </html>
