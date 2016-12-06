@@ -16,7 +16,7 @@
 </div>
 
 <div class='row parameters-config sep'>
-  <%= form_for :settings, url: '/net/setup' do |f| %>
+  <%= form_for :settings, remote: true, url: '#' do |f| %>
     <p class='description'>
       Configure os parâmetros para a execução da medição.
     <p>
@@ -26,7 +26,7 @@
       <%= f.label(:amount_of_rows, 'Qtd. de Fileiras', class: 'active') %>
     </div>
     <div class='row buttons'>
-      <%= f.button('Conectar e Salvar', class: 'btn waves-effect waves-light save') %>
+      <%= f.button('Conectar e Salvar', class: 'btn waves-effect waves-light save-conf') %>
     </div>
   <% end %>
 </div>
@@ -63,3 +63,4 @@
     </div>
   <% end %>
 </div>
+<%= javascript_include_tag "general_settings.js" %>

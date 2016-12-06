@@ -24,12 +24,7 @@ class SocketsController < ApplicationController
   def setup
     if ftp_server_available?
       if mount_conf_file
-        begin 
-          write_to_ftp_server
-          render json: { message: "File written with success" }, status: 200
-        rescue
-          render json: { message: "Error writing to FTP Server" }, status: 207
-        end
+        write_to_ftp_server
       else
         render json: { message: "Error mounting conf file" }, status: 207
       end
@@ -49,7 +44,7 @@ class SocketsController < ApplicationController
     end
   end
 
-  #######
+  ##########################################################################33
   private 
 
   def tcp_server_available?
@@ -74,7 +69,7 @@ class SocketsController < ApplicationController
           ftp.connect(ip, port)
           ftp.close
           return true
-        rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH
+        rescue
           return false
         end
       end
@@ -91,7 +86,7 @@ class SocketsController < ApplicationController
           s = TCPSocket.new(ip, port)
           s.close
           return true
-        rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH
+        rescue
           return false
         end
       end
@@ -110,7 +105,7 @@ class SocketsController < ApplicationController
       end
         file_written = true 
     rescue IOError => e
-      #some error occur, dir not writable etc.
+      #deu ruim
     ensure
       file.close unless file.nil?
     end
@@ -118,6 +113,18 @@ class SocketsController < ApplicationController
   end
 
   def write_to_ftp_server
+    settings = Settings.getInstance
+    ip = settings.ip_address
+    port = settings.ftp_port
+    begin
+      ftp = Net::FTP.new
+      ftp.connect(ip, port)
+      ftp.login
+      ftp.puttextfile(CONF_FILE_PATH, "settings.conf")
+      render json: { message: "File written with success" }, status: 200
+    rescue
+      render json: { message: "Error connecting to FTP Server" }, status: 207
+    end
   end
 
   def fetch_data
