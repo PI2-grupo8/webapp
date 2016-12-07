@@ -1,0 +1,61 @@
+<html>
+
+  <style>
+    #titulo {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    #tabela {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    #botao {
+      padding-top: 4.9%;
+      padding-left: 90%;
+    }
+  </style>
+
+  <div class="content measurements">
+
+  <div id="titulo">
+    <h4>
+      <i class="material-icons prefix">assessment</i>
+      <span>Medições</span>
+    </h4>
+  </div>
+
+  <div id="tabela">
+    <table class="centered">
+    <thead>
+       <tr>
+           <th>Horário</th>
+           <th>Dia</th>
+           <th>Latitude</th>
+           <th>Longitude</th>
+           <th>Umidade do solo</th>
+           <th>Umidade do ar</th>
+           <th>Temperatura do ar</th>
+       </tr>
+    </thead>
+
+    <tbody>
+      <% @measurements.each_with_index do |measurement, index| %>
+        <tr>
+          <td><%= measurement.gathering_time.to_formatted_s(:time) %></td>
+          <td><%= measurement.gathering_date %></td>
+          <td><%= measurement.latitude %></td>
+          <td><%= measurement.longitude %></td>
+          <td><%= measurement.absolute_humidity %></td>
+          <td><%= measurement.air_humidity %></td>
+          <td><%= measurement.air_temperature %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="botao">
+    <%= link_to "Voltar", measurements_path, class: 'btn btn-default' %>
+  </div>
+
+</html>

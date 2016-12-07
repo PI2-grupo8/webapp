@@ -1,5 +1,9 @@
 class MeasurementsController < ApplicationController
   def index
+    @measurements = Measurement.all.map(&:started_at).uniq
+  end
+
+  def table_page
     @measurements = Measurement.all
   end
 
