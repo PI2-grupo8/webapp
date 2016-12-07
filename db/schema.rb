@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161127113323) do
   end
 
   create_table "measurements", force: :cascade do |t|
-    t.datetime "started_at"
+    t.integer  "started_at"
     t.time     "gathering_time"
     t.date     "gathering_date"
     t.float    "latitude"
