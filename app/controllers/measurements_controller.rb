@@ -4,7 +4,7 @@ class MeasurementsController < ApplicationController
   end
 
   def table_page
-    @measurements = Measurement.all
+    @measurements = Measurement.where(started_at: params[:id])
   end
 
   def import
@@ -13,7 +13,7 @@ class MeasurementsController < ApplicationController
   end
 
   def humidity_heatmap
-    @measurements = Measurement.all
+    @measurements = Measurement.where(started_at: params[:id])
 
     latitude_array = []
     longitude_array = []
@@ -31,7 +31,7 @@ class MeasurementsController < ApplicationController
   end
 
   def air_humidity_heatmap
-    @measurements = Measurement.all
+    @measurements = Measurement.where(started_at: params[:id])
 
     latitude_array = []
     longitude_array = []
@@ -49,7 +49,7 @@ class MeasurementsController < ApplicationController
   end
 
   def air_temperature_heatmap
-    @measurements = Measurement.all
+    @measurements = Measurement.where(started_at: params[:id])
 
     latitude_array = []
     longitude_array = []

@@ -64,10 +64,10 @@
       <% @measurements.each_with_index do |measurement, index| %>
         <tr>
           <td><%= measurement %></td>
-          <td><%= link_to "Tabela geral", measurements_table_page_path, class: "btn waves-effect waves-light" %></td>
-          <td><%= link_to "Umidade do solo", measurements_humidity_heatmap_path, class: "btn waves-effect waves-light blue" %></td>
-          <td><%= link_to "Umidade do ar", measurements_air_humidity_heatmap_path, class: "btn waves-effect waves-light blue" %></td>
-          <td><%= link_to "Temperatura do ar", measurements_air_temperature_heatmap_path, class: "btn waves-effect waves-light red" %></td>
+          <td><%= link_to "Tabela geral", measurements_table_page_path(:id => measurement), class: "btn waves-effect waves-light" %></td>
+          <td><%= link_to "Umidade do solo", measurements_humidity_heatmap_path(:id => measurement), class: "btn waves-effect waves-light blue" %></td>
+          <td><%= link_to "Umidade do ar", measurements_air_humidity_heatmap_path(:id => measurement), class: "btn waves-effect waves-light blue" %></td>
+          <td><%= link_to "Temperatura do ar", measurements_air_temperature_heatmap_path(:id => measurement), class: "btn waves-effect waves-light red" %></td>
         </tr>
       <% end %>
     </tbody>
