@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'measurements/index'
   get 'measurements/import'
+  get 'measurements/table_page' => 'measurements#table_page'
   get '/measurements/humidity_heatmap' => 'measurements#humidity_heatmap'
   get '/measurements/air_humidity_heatmap' => 'measurements#air_humidity_heatmap'
   get '/measurements/air_temperature_heatmap' => 'measurements#air_temperature_heatmap'
