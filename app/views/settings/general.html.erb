@@ -9,9 +9,8 @@
       Recupere os dados das medições feitas pelo veículo.
     <p>
     <div class='row buttons'>
-      <button class='btn waves-effect waves-light' type='button' name='action'>Baixar dados
-        <i class='material-icons right'>system_update_alt</i>
-      </button>
+      <%= button_tag('Sincronizar dados', class: 'btn waves-effect waves-light sync') %>
+      <i class='material-icons right'>system_update_alt</i>
     </div>
 </div>
 
@@ -20,10 +19,23 @@
     <p class='description'>
       Configure os parâmetros para a execução da medição.
     <p>
-    <div class='input-field col s3'>
-      <i class='material-icons prefix'>trending_up</i>
-      <%= f.number_field(:amount_of_rows, class: 'validate') %>
-      <%= f.label(:amount_of_rows, 'Qtd. de Fileiras', class: 'active') %>
+    <div class='row'>
+      <div class='input-field col s3'>
+        <i class='material-icons prefix'>trending_up</i>
+        <%= f.number_field(:amount_of_rows, class: 'validate') %>
+        <%= f.label(:amount_of_rows, 'Qtd. de Fileiras', class: 'active') %>
+      </div>
+      <div class='input-field col s3'>
+        <i class='material-icons prefix'>trending_up</i>
+        <%= f.number_field(:measurements_distance, class: 'validate') %>
+        <%= f.label(:measurements_distance, 'Distancia entre medições', class: 'active') %>
+      </div>
+
+      <div class='input-field col s3'>
+        <i class='material-icons prefix'>trending_up</i>
+        <%= f.number_field(:amount_of_measurementes, class: 'validate') %>
+        <%= f.label(:amount_of_measurementes, 'Qtd. de medições por fileira', class: 'active') %>
+      </div>
     </div>
     <div class='row buttons'>
       <%= f.button('Conectar e Salvar', class: 'btn waves-effect waves-light save-conf') %>

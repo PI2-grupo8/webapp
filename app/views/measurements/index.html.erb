@@ -76,7 +76,7 @@
           <td><%= link_to "x", measurements_humidity_heatmap_path %></td>
           <td><%= link_to "x", measurements_air_humidity_heatmap_path %></td>
           <td><%= link_to "x", measurements_air_temperature_heatmap_path %></td> -->
-          <td><%= measurement.gathering_time.to_formatted_s(:time) %></td>
+          <td><%= measurement.gathering_time.to_formatted_s(:time) if measurement.gathering_time%></td>
           <td><%= measurement.gathering_date %></td>
           <td><%= measurement.latitude %></td>
           <td><%= measurement.longitude %></td>
