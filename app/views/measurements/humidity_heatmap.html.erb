@@ -90,7 +90,8 @@
        'rgba(255, 0, 0, 1)'
      ]
 
-      for (i = 0; i < 10 ; i++){
+      js_lat = <%= @js_lat %>;
+      for (i = 0; i < js_lat.length ; i++){
         js_lat[i] = <%= @js_lat %>[i];
         js_long[i] = <%= @js_long %>[i];
         js_humidity[i] = <%= @js_humidity %>[i];
